@@ -49,7 +49,7 @@ var Game = {
         ],
         init : function (oParent) {//初始化
             this.oParent = oParent;
-            this.createMap(1);
+            this.createMap(0);
         },
         createMap : function (iNow) {//创建地图i
             this.oParent.empty();
@@ -127,15 +127,15 @@ var Game = {
                            $(elem).css('top', (oP.data('y') + stepY) * 50 );
 
                            $('.box').each( $.proxy(function (j, elem2){
-                               if( this.pz( $(elem) , $(elem2)) && elem!=elem2 ){
-                                    $(elem).css('left' , oPerson.data('x')*50 );
-                                    $(elem).css('top' , oPerson.data('y')*50 );
+                               if( this.pz( $(elem) , $(elem2)) && elem!= elem2 ){
+                                    $(elem).css('left' , oP.data('x')*50 );
+                                    $(elem).css('top' , oP.data('y')*50 );
                                     
-                                    oPerson.data('x',oPerson.data('x') - xValue );
-                                    oPerson.data('y',oPerson.data('y') - yValue );
+                                    oP.data('x',oP.data('x') -stepX );
+                                    oP.data('y',oP.data('y') - stepY );
                                     
-                                    oPerson.css('left' , oPerson.data('x')*50 );
-                                    oPerson.css('top' , oPerson.data('y')*50 );	
+                                    oP.css('left' , oP.data('x')*50 );
+                                    oP.css('top' , oP.data('y')*50 );	
                                }
                            }, this) )
                       
