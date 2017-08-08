@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    
+    <div id="div1">
+        <div id="gameBtn">开始游戏</div>
+    </div>
+     
+    <script src="index.js"></script>
+    <script>    
+       
+       window.onload = function () {
+           var oBtn = document.getElementById('gameBtn');
+           oBtn.onclick = function () {
+               this.style.display = 'none';
+               Game.init('div1');//游戏go go
+           }
+       }
+
+    </script>
+    
+
+</body>
+</html>
